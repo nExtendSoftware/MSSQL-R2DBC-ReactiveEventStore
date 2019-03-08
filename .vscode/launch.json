@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EventsApplication<eventstore>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "nl.nextend.r2dbc.reactive.eventstore.EventsApplication",
+            "projectName": "eventstore",
+            "args": ""
+        }
+    ]
+}
