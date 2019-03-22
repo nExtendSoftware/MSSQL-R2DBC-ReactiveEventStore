@@ -1,0 +1,26 @@
+version: "2.1"
+
+services:
+  mssql-r2dbc-reactiveeventstore:
+    image: mssql-r2dbc-reactiveeventstore
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - db  
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-CTP2.2-ubuntu
+    environment:
+      - ACCEPT_EULA= Y
+      - SA_PASSWORD= Pa$wo0RD!
+      - MSSQL_PID= Developer
+      - MSSQL_LCID= 1031
+      - MSSQL_MEMORY_LIMIT_MB= 8192
+      - MSSQL_AGENT_ENABLED= true
+      - TZ= Europe/Amsterdam
+    ports:
+      - 1433:1433
+      - 49200:1433
+    volumes:
+      - ./data:/var/opt/mssql/data
+      - ./backup:/var/opt/mssql/backup

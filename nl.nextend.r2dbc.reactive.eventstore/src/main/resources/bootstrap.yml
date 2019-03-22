@@ -34,7 +34,7 @@ management:
         include: '*'
 db:
   eventstore:
-    password: password
+    password: Pa$wo0RD!
     username: sa
     url: localhost
     port: 1433
