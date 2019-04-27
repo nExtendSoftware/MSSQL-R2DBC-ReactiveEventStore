@@ -2,7 +2,7 @@
 set -e
 
 wait_time=90s 
-password=Pa$wo0RD!
+password=Passwo0RD!
 
 # wait for SQL Server to come up
 echo creating database will start in $wait_time...

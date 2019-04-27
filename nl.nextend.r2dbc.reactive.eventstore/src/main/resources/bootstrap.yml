@@ -34,8 +34,8 @@ management:
         include: '*'
 db:
   eventstore:
-    password: Pa$wo0RD!
+    password: Passwo0RD!
     username: sa
-    url: 127.0.0.1
+    url: db
     port: 1433
     databasename: EventsDB

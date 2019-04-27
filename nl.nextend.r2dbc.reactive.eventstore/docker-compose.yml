@@ -3,6 +3,8 @@ version: "3"
 services:
   db:
     image: mcr.microsoft.com/mssql/server:latest
+    ports:
+      - 1433:1433
     restart: always
     environment:
       - ACCEPT_EULA=Y
@@ -11,8 +13,6 @@ services:
       - MSSQL_MEMORY_LIMIT_MB= 8192
       - MSSQL_AGENT_ENABLED=true
       - TZ=Europe/Amsterdam
-    networks: 
-      - r2dbcnetwork  
   mssql-r2dbc-reactiveeventstore:
     image: mssql-r2dbc-reactiveeventstore:latest
     restart: always
@@ -21,12 +21,7 @@ services:
       - 8080:8080
     depends_on:
       - db  
-    networks: 
-      - r2dbcnetwork   
     volumes:
       - r2dbcdata:/var/opt/events  
-networks: 
-  r2dbcnetwork:
-    driver: bridge
 volumes: 
   r2dbcdata: 

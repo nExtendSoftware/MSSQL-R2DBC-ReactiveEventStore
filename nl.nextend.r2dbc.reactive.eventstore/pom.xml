@@ -72,10 +72,10 @@
 		    <artifactId>spring-data-r2dbc</artifactId>
 			<version>1.0.0.BUILD-SNAPSHOT</version>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>io.r2dbc</groupId>
 			<artifactId>r2dbc-spi</artifactId>
-		</dependency>
+		</dependency>-->
 		<dependency>
 		    <groupId>io.r2dbc</groupId>
 		    <artifactId>r2dbc-mssql</artifactId>
