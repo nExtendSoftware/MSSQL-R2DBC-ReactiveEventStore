@@ -1,6 +1,5 @@
 
 FROM openjdk:8-jdk-alpine
-FROM microsoft/mssql-server-linux:latest
 VOLUME /tmp
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
@@ -10,7 +9,7 @@ COPY entrypoint.sh entrypoint.sh
 COPY create-db.sql create-db.sql
 COPY startSqlCmd.sh startSqlCmd.sh
 ENV ACCEPT_EULA Y
-ENV sa_password Pa$wo0RD!
+ENV sa_password Passwo0RD!
 RUN chmod +x ./startSqlCmd.sh
 CMD /bin/bash ./EntryPoint.sh
 # For Spring-Boot project, use the entrypoint below to reduce Tomcat startup time.

@@ -36,6 +36,6 @@ db:
   eventstore:
     password: Pa$wo0RD!
     username: sa
-    url: localhost
+    url: 127.0.0.1
     port: 1433
     databasename: EventsDB

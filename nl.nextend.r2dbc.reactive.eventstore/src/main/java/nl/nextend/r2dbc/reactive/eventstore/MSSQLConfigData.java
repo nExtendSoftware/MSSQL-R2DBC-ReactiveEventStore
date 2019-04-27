@@ -16,7 +16,7 @@ public class MSSQLConfigData {
 	@Value("${db.eventstore.url:localhost}")
 	private String ipaddress;
 	
-	@Value("${db.eventstore.port:1433}")
+	@Value("${db.eventstore.port:40133}")
 	private int port;
 	
 	@Value("${db.eventstore.databasename:dbevents}")

@@ -1,6 +1,8 @@
 version: '2.1'
 
 services:
+  java:
+    image: openjdk:8-jdk-alpine
   mssql-r2dbc-reactiveeventstore:
     image: mssql-r2dbc-reactiveeventstore
     build:
