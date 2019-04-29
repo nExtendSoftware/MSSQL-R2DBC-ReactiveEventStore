@@ -3,3 +3,6 @@ Demo of a Spring boot application using a Spring-Data Reactive EventStore with M
 
 # Docker
 Use docker-compose -d --build
+
+# End-Point
+http://localhost:8080/events
