@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-wait_time=90s 
+wait_time=10s 
 password=Passwo0RD!
 
 # wait for SQL Server to come up

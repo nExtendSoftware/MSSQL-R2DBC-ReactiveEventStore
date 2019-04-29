@@ -1,0 +1,8 @@
+FROM mcr.microsoft.com/mssql/server:2017-latest
+COPY entrypoint.sh ./entrypoint.sh
+COPY create-db.sql ./create-db.sql
+COPY startSqlCmd.sh ./startSqlCmd.sh
+ENV ACCEPT_EULA Y
+ENV sa_password Passwo0RD!
+RUN chmod +x ./startSqlCmd.sh
+CMD /bin/bash ./entrypoint.sh
