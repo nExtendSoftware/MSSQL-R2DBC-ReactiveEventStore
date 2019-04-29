@@ -18,7 +18,6 @@ services:
   mssql-r2dbc-reactiveeventstore:
     image: mssql-r2dbc-reactiveeventstore:latest
     restart: always
-    build: .
     ports:
       - 8080:8080
     depends_on:
