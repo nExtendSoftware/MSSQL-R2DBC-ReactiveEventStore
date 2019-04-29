@@ -5,7 +5,8 @@ Demo of a Spring boot application using a Spring-Data Reactive EventStore with M
 mvn clean install
 
 # Docker
-Use docker-compose -d --build
+Install docker
+./docker-compose up -f ./nl.nextend.r2dbc.reactive.eventstore/docker-compose.yml -d --build
 
 # End-Point
 http://localhost:8080/events
