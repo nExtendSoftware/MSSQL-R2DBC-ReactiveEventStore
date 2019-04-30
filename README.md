@@ -1,7 +1,7 @@
 # MSSQL-R2DBC-ReactiveEventStore
 Demo of a Spring boot application using a Spring-Data Reactive EventStore with MSSQL-R2DBC setup
 
-# Prerequiseds
+# Prerequisites
 Visual Studio Code, Maven and Docker installed
 
 # Maven build ReactiveEventStore spring boot application
