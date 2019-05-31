@@ -5,6 +5,7 @@ ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
 ADD ./target/eventstore-0.0.1-SNAPSHOT.jar eventstore-0.0.1-SNAPSHOT.jar
 EXPOSE 8080 1433
+COPY create-event.sh create-event.sh
 COPY entrypoint.sh entrypoint.sh
 COPY create-db.sql create-db.sql
 COPY startSqlCmd.sh startSqlCmd.sh

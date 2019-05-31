@@ -10,7 +10,7 @@ public class SecurityConfiguration {
 
 	@Bean
 	public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
-		return http.csrf().disable().authorizeExchange().anyExchange().authenticated().and().httpBasic().and().build();
+		return http.csrf().disable().authorizeExchange().anyExchange().permitAll().and().build();
 	}
 
 }
