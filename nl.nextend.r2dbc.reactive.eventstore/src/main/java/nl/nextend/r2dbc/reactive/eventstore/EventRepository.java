@@ -5,7 +5,7 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 import reactor.core.publisher.Flux;
 
-interface EventsRepository extends ReactiveCrudRepository<Event, String> {
+interface EventRepository extends ReactiveCrudRepository<Event, String> {
 
 	@Query("select * from events e")
 	Flux<Event> findAllEvents();

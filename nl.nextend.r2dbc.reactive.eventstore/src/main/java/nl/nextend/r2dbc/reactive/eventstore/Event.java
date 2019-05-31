@@ -6,15 +6,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Table(value="Events")
 class Event {
 	
-		public Event(String level, String event, String version) {
+		public Event(String event, String version, String level) {
 			this.event = event;
 			this.level = level;
 			this.version = version;

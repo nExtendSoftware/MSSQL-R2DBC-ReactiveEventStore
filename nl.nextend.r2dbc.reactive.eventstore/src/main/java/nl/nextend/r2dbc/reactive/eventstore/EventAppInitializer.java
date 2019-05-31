@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
 @Component
-public class EventsAppInitializer implements ApplicationRunner{
+public class EventAppInitializer implements ApplicationRunner{
 
 	@Autowired
-	private EventsRepository eventsRepository;
+	private EventRepository eventsRepository;
 	
 	/** The log */
-	private static final Logger log = LoggerFactory.getLogger( EventsAppInitializer.class );
+	private static final Logger log = LoggerFactory.getLogger( EventAppInitializer.class );
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {

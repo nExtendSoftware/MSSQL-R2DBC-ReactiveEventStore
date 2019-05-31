@@ -10,7 +10,7 @@ spring:
   application:
     name: eventstore
   jpa:
-    database-platform: org.hibernate.dialect.SQLServerDialect  
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect  
     hibernate:
       ddl-auto: create-drop
 eureka:   

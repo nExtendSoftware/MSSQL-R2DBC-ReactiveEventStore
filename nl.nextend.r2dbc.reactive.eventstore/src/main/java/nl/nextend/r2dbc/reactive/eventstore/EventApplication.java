@@ -9,14 +9,14 @@ import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
 @SpringBootApplication
-public class EventsApplication {
+public class EventApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EventsApplication.class, args);
+		SpringApplication.run(EventApplication.class, args);
 	}
 	
 	@Bean
-	RouterFunction<?> routes (EventsRepository eventsRepository){
+	RouterFunction<?> routes (EventRepository eventsRepository){
 		return RouterFunctions.route(RequestPredicates.GET("/events"), req -> ServerResponse.ok().body(eventsRepository.findAllEvents(), Event.class));
 	}
 
