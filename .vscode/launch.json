@@ -9,6 +9,16 @@
             "mainClass": "nl.nextend.r2dbc.reactive.eventstore.EventsApplication",
             "projectName": "eventstore",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EventApplication<eventstore>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "nl.nextend.r2dbc.reactive.eventstore.EventApplication",
+            "projectName": "eventstore",
+            "args": ""
         }
     ]
 }

@@ -1,7 +1,5 @@
 package nl.nextend.r2dbc.reactive.eventstore;
 
-
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
@@ -13,24 +11,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Table(value="Events")
+@Table(value = "Events")
 class Event {
-	
-		public Event(String event, String version, String level) {
-			this.event = event;
-			this.level = level;
-			this.version = version;
-		}
-		
-		@Id
-		private String id;
-		
-		@Column(value="event")
-		private String event;
-		
-		@Column(value="version")
-		private String version;
-		
-		@Column(value="level")
-		private String level;
+
+	@Id
+	private String id;
+
+	@Column(value = "event")
+	private String event;
+
+	@Column(value = "version")
+	private String version;
+
+	@Column(value = "level")
+	private String level;
 }

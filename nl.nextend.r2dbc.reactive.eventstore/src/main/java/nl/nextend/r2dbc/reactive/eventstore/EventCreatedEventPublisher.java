@@ -6,10 +6,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.function.Consumer;
 
 import org.springframework.context.ApplicationListener;
+import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
 import reactor.core.publisher.FluxSink;
-
+@Component
 public class EventCreatedEventPublisher implements ApplicationListener<EventCreatedEvent>, 
 		Consumer<FluxSink<EventCreatedEvent>> { 
 

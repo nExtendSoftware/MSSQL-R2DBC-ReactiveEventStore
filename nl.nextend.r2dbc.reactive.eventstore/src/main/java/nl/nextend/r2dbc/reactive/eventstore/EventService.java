@@ -1,5 +1,7 @@
 package nl.nextend.r2dbc.reactive.eventstore;
 
+import java.util.UUID;
+
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,7 @@ public class EventService {
 	}
 
 	public Flux<Event> all() { 
-		return this.eventRepository.findAll();
+		return this.eventRepository.findAllEvents();
 	}
 
 	public Mono<Event> get(String id) { 
@@ -26,7 +28,7 @@ public class EventService {
 	}
 
 	public Mono<Event> update(String id, String eventContent, String version, String level) { 
-		return this.eventRepository.findById(id).map(p -> new Event(p.getId(), eventContent, version, level))
+		return this.eventRepository.findById(id).map(p -> new Event(id, eventContent, version, level))
 				.flatMap(this.eventRepository::save);
 	}
 
@@ -35,7 +37,7 @@ public class EventService {
 	}
 
 	public Mono<Event> create(String eventContents, String version, String level) { 
-		return this.eventRepository.save(new Event(eventContents, version, level))
+		return this.eventRepository.save(new Event(UUID.randomUUID().toString() ,eventContents, version, level))
 				.doOnSuccess(event -> this.publisher.publishEvent(new EventCreatedEvent(event)));
 	}
 

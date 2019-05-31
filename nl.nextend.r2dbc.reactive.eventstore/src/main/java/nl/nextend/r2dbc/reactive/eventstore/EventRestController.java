@@ -22,37 +22,37 @@ import reactor.core.publisher.Mono;
 @RefreshScope
 public class EventRestController {
 
-	private final MediaType mediaType = MediaType.APPLICATION_JSON_UTF8;
-	private final EventService eventRepository;
+	private final MediaType mediaType = MediaType.APPLICATION_JSON;
+	private final EventService eventService;
 
 	EventRestController(EventService profileRepository) {
-		this.eventRepository = profileRepository;
+		this.eventService = profileRepository;
 	}
 
 	@GetMapping
 	Publisher<Event> getAll() {
-		return this.eventRepository.all();
+		return this.eventService.all();
 	}
 
 	@GetMapping("/{id}")
 	Publisher<Event> getById(@PathVariable("id") String id) {
-		return this.eventRepository.get(id);
+		return this.eventService.get(id);
 	}
 
 	@PostMapping
 	Publisher<ResponseEntity<Event>> create(@RequestBody Event toWrite) {
-		return this.eventRepository.create(toWrite.getEvent(), toWrite.getVersion(), toWrite.getLevel())
+		return this.eventService.create(toWrite.getEvent(), toWrite.getVersion(), toWrite.getLevel())
 				.map(p -> ResponseEntity.created(URI.create("/events/" + p.getId())).contentType(mediaType).build());
 	}
 
 	@DeleteMapping("/{id}")
 	Publisher<Event> deleteById(@PathVariable String id) {
-		return this.eventRepository.delete(id);
+		return this.eventService.delete(id);
 	}
 
 	@PutMapping("/{id}")
 	Publisher<ResponseEntity<Event>> updateById(@PathVariable String id, @RequestBody Event event) {
-		return Mono.just(event).flatMap(p -> this.eventRepository.update(id, p.getEvent(), p.getVersion(), p.getLevel()))
+		return Mono.just(event).flatMap(p -> this.eventService.update(id, p.getEvent(), p.getVersion(), p.getLevel()))
 				.map(p -> ResponseEntity.ok().contentType(this.mediaType).build());
 	}
 

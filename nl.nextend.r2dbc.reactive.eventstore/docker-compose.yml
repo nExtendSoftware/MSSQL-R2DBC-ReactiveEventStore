@@ -16,7 +16,7 @@ services:
       - MSSQL_AGENT_ENABLED=true
       - TZ=Europe/Amsterdam
   mssql-r2dbc-reactiveeventstore:
-    image: mssql-r2dbc-reactiveeventstore:latest
+    image: nextendsoftware/nl.nextend.r2dbc.reactive.eventstore:latest
     restart: always
     ports:
       - 8080:8080
