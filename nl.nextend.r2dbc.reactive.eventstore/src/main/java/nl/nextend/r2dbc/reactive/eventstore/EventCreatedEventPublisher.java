@@ -6,8 +6,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.function.Consumer;
 
 import org.springframework.context.ApplicationListener;
-import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
+import org.springframework.stereotype.Component;
+
 
 import reactor.core.publisher.FluxSink;
 @Component

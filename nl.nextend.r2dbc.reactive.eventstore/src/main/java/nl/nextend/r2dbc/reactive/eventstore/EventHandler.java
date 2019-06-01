@@ -3,7 +3,6 @@ package nl.nextend.r2dbc.reactive.eventstore;
 import java.net.URI;
 
 import org.reactivestreams.Publisher;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
@@ -50,7 +49,6 @@ public class EventHandler {
             .from(events)
             .flatMap(p -> ServerResponse
                 .created(URI.create("/events/" + p.getId()))
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .build()
             );
     }
@@ -58,7 +56,6 @@ public class EventHandler {
     private static Mono<ServerResponse> defaultReadResponse(Publisher<Event> events) {
         return ServerResponse
             .ok()
-            .contentType(MediaType.APPLICATION_JSON_UTF8)
             .body(events, Event.class);
     }
 
